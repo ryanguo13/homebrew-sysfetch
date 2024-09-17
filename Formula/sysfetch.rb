@@ -8,11 +8,10 @@ class Sysfetch < Formula
   depends_on "julia" 
 
   def install
-    bin.install "sysfetch.jl" 
+    bin.install "sysfetch.jl" => "sysfetch"
   end
 
   test do
-    # 测试 Homebrew 安装是否成功
-    system "#{bin}/sysfetch.jl"
+    system "#{bin}/sysfetch", "--help"
   end
 end
